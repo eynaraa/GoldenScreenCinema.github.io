@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="gsc.css">
+    <link rel="icon" href="gscLogo.png">
+    <title>Golden Screen Cinemas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="images/gscLogo.png" class="gscLogo">
+    </div>
+
+    <div class="base" align="center">
+        
+        <table>
+            <tr>
+                <td>Enter Username</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <th colspan="2"><button class="contBtn" id="contBtn">Continue</button></th>    
+            </tr>  
+        </table>
+
+
+    </div>
+    <script>
+        document.getElementById('contBtn').addEventListener('click', nextPage);
+        function nextPage (){
+            let name = document.getElementById('name').value;
+            if(name == ""){
+                alert('You forgot to enter username');
+            }
+            else{
+                alert('Welcome to our GSC homepage');
+                window.location.href="home.html";
+                sessionStorage.setItem('name', name);
+                
+            }
+        }
+    </script>
+    
+    
+
+</body>

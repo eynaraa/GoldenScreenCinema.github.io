@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Screen Cinemas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+        span {
+            color: yellow;
+            
+            
+        }
+
+        #name {
+            color: yellow;
+            text-align: center;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.831);
+        }
+
+        .header {
+            width: 100%;
+            height: 85px;
+            background-color: yellow;
+            border-bottom: 8px solid black;
+
+        }
+
+        .gscLogo {
+            width: 15%;
+            padding: 20px 15px;
+        }
+
+        .showing {
+            width: 100%;
+            color: yellow;
+            font-size: large;
+            position: absolute;
+            top: 700px;
+            text-align: center;
+            position: absolute;
+            top: 200px;
+        }
+
+        .movPart{
+            width: 100%;
+            height: 600px;
+            border: 4px solid yellow;
+            border-style: dotted;
+            padding: 30px;
+           
+        }
+
+        .movies{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 520px;
+            background-color: rgba(0, 0, 0, 0.392);
+            padding: 20px 5%;
+        }
+
+        .movCont img{
+            width: 90%;
+            height: 330px;
+            padding: 20px;
+            border-radius: 15%;
+        }
+
+
+        .movies .movCont{
+            width: 30%;
+            height: 460px;
+            background-color: rgba(0, 0, 0, 0.904);
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px black;
+            padding-top:20px;
+            
+            
+        }
+
+        .movies .movCont input[type=button]{
+           
+            border-radius: 10px;
+            height: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            font-weight: 600;
+            border: 0;
+            background-color: yellow;
+            color: black;
+            transition: .4s;
+        }
+
+        .movies .movCont input[type=button]:hover{
+            background-color: rgba(105, 93, 93, 0.601);
+            color: yellow;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.189);
+            
+        }
+
+        #date {
+            font-size: 24px;
+            padding: 5px;
+        }
+
+        .list {
+            border: 5px solid black;
+            width: 100%;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.524);
+            color: yellow;
+            margin: 40px 0px;
+            border: 4px solid yellow;
+            border-style: dashed;
+        }
+
+        #mov1Time1 {
+            position: absolute;
+            top: 460px;
+            left: 180px;
+            width: 6%;
+
+        }
+
+        #mov1Time2 {
+            position: absolute;
+            top: 460px;
+            left: 280px;
+            width: 6%;
+        }
+
+        #mov1Time3 {
+            position: absolute;
+            top: 460px;
+            left:380px;
+            width: 6%;
+        }
+
+        #mov1Time4 {
+            position: absolute;
+            top: 500px;
+            left:230px;
+            width: 6%;
+        }
+
+        #mov1Time5 {
+            position: absolute;
+            top: 500px;
+            left:330px;
+            width: 6%;
+        }
+
+        #mov2Time1 {
+            position: absolute;
+            top: 460px;
+            left:615px;
+            width: 6%;
+        }
+
+        #mov2Time2 {
+            position: absolute;
+            top: 460px;
+            left:715px;
+            width: 6%;
+        }
+
+        #mov2Time3 {
+            position: absolute;
+            top: 460px;
+            left:815px;
+            width: 6%;
+        }
+
+        #mov3Time1 {
+            position: absolute;
+            top: 460px;
+            left:1100px;
+            width: 6%;
+        }
+
+        #mov3Time2 {
+            position: absolute;
+            top: 460px;
+            left:1200px;
+            width: 6%;
+        }
+
+        #mov4Time1 {
+            position: absolute;
+            top: 1050px;
+            left:180px;
+            width: 6%;
+        }
+
+        #mov4Time2 {
+            position: absolute;
+            top: 1050px;
+            left:280px;
+            width: 6%;
+        }
+
+        #mov4Time3 {
+            position: absolute;
+            top: 1050px;
+            left:380px;
+            width: 6%;
+        }
+
+        #mov4Time4 {
+            position: absolute;
+            top: 1090px;
+            left:280px;
+            width: 6%;
+        }
+
+        #mov5Time1 {
+            position: absolute;
+            top: 1050px;
+            left: 615px;
+            width: 6%;
+        }
+
+        #mov5Time2 {
+            position: absolute;
+            top: 1050px;
+            left: 715px;
+            width: 6%;
+        }
+
+        #mov5Time3 {
+            position: absolute;
+            top: 1050px;
+            left: 815px;
+            width: 6%;
+        }
+
+        #mov6Time1 {
+            position: absolute;
+            top: 1050px;
+            left: 1050px;
+            width: 6%;
+        }
+
+        #mov6Time2 {
+            position: absolute;
+            top: 1050px;
+            left: 1150px;
+            width: 6%;
+        }
+
+        #mov6Time3 {
+            position: absolute;
+            top: 1050px;
+            left: 1250px;
+            width: 6%;
+        }
+
+        #mov6Time4 {
+            position: absolute;
+            top: 1090px;
+            left: 1150px;
+            width: 6%;
+        }
+        
+        td {
+            padding: 10px 10px;
+            
+        }
+
+        .tableList {
+            
+            width: 100%;
+            
+        }
+
+        .movTitle {
+            color: yellow;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+
+        }
+        
+        .seatContainer {
+            border: 4px solid yellow;
+            border-style: dotted;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            margin: 40px 0;
+            display: flex;
+            
+        }
+
+        .screen {
+            background: #fff;
+            height: 100px;
+            width: 30%;
+            margin: 15px 0;
+            transform: rotateX(-45deg);
+            box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+            position: absolute;
+            left: 540px;
+            top: 1280px;
+        }
+
+        .titleCont {
+            padding:  10px 40%;
+            width: 100%;
+            font-size: 19px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: black;
+        }
+
+        .seat {
+            background-color: #444451;
+            height: 25px;
+            width: 28px;
+            margin: 3px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .occupied {
+            background-color: white;
+        }
+
+        .selected {
+            background-color: yellow;
+        }
+
+        .seat:nth-of-type(2) {
+            margin-right: 18px;
+        }
+
+        .seat:nth-last-of-type(2) {
+            margin-left: 18px;
+        }
+
+        .seat:not(.occupied):hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .cinema-seats {
+            position: absolute;
+            top: 1420px;
+            left: 630px;
+        }
+        
+        .backbtn {
+            background-color: yellow;
+            border-radius: 10px;
+            width: 12%;
+            height: 30px;
+            position: absolute;
+            top: 1800px;
+            left: 10px;
+        }
+
+        .backbtn:hover {
+            background-color: rgba(105, 93, 93, 0.601);
+            color: yellow;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.189);
+            transition: .4s;
+        }
+
+        .submitSeat {
+            background-color: yellow;
+            border-radius: 10px;
+            width: 10%;
+            height: 30px;
+            position: absolute;
+            top: 1800px;
+            left: 690px;
+        }
+
+        .submitSeat:hover {
+            background-color: rgba(105, 93, 93, 0.601);
+            color: yellow;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.189);
+            transition: .4s;
+        }
+
+        .nextBtn {
+            background-color: yellow;
+            border-radius: 10px;
+            width: 15%;
+            height: 30px;
+            position: absolute;
+            top: 1800px;
+            left: 1280px;
+        }
+
+        .nextBtn:hover {
+            background-color: rgba(105, 93, 93, 0.601);
+            color: yellow;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.189);
+            transition: .4s;
+        }
+
+        .showcase {
+            display: flex;
+            list-style-type: none;
+            border-radius: 5px;
+            color: yellow;
+            position: absolute;
+            left: 600px;
+            top: 1600px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .showcase li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+
+        .showcase li small {
+            margin-left: 2px;
+        }
+
+        .mov1Info {
+            display: none;
+            font-size: 15px;
+        }
+
+        .mov2Info {
+            display: none;
+            font-size: 15px;
+        }
+
+        .mov3Info {
+            display: none;
+            font-size: 15px;
+        }
+
+        .mov4Info {
+            display: none;
+            font-size: 15px;
+        }
+
+        .mov5Info {
+            display: none;
+            font-size: 15px;
+        }
+
+        .mov6Info {
+            display: none;
+            font-size: 15px;
+        }
+        
+
+        .info{
+            color: yellow;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+            
+        }
+
+        .info:hover + .mov1Info {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .info:hover + .mov2Info {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .info:hover + .mov3Info {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .info:hover + .mov4Info {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .info:hover + .mov5Info {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .info:hover + .mov6Info {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .infoBase1 {
+            background-color: #161618be;
+            position: absolute;
+            top: 158px;
+            left: 165px;
+            width: 21%;
+            border-radius: 10px;
+
+        }
+
+        .infoBase2 {
+            background-color: #161618be;
+            position: absolute;
+            top: 158px;
+            left: 600px;
+            width: 21%;
+            border-radius: 10px;
+
+        }
+
+        .infoBase3 {
+            background-color: #161618be;
+            position: absolute;
+            top: 158px;
+            left: 1035px;
+            width: 21%;
+            border-radius: 10px;
+
+        }
+
+        .infoBase4 {
+            background-color: #161618be;
+            position: absolute;
+            top: 727px;
+            left: 165px;
+            width: 21%;
+            border-radius: 10px;
+
+        }
+
+        .infoBase5 {
+            background-color: #161618be;
+            position: absolute;
+            top: 727px;
+            left: 600px;
+            width: 21%;
+            border-radius: 10px;
+
+        }
+
+        .infoBase6 {
+            background-color: #161618be;
+            position: absolute;
+            top: 727px;
+            left: 1035px;
+            width: 21%;
+            border-radius: 10px;
+
+        }
+
+        .text {
+            position: absolute;
+            left: 650px;
+            top: 1650px;
+
+        }
+
+        .menuTitle {
+            font-size: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .menuInfoBase1 {
+            position: absolute;
+            top: 2030px;
+            background-color: #161618be;
+            left: 136px;
+            width: 10.5%;
+            border-radius: 10px;
+        }
+
+        .info:hover + .menuInfo1 {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .menuInfo1 {
+            display: none;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .menuInfoBase2 {
+            position: absolute;
+            top: 2030px;
+            background-color: #161618be;
+            left: 355px;
+            width: 10.5%;
+            border-radius: 10px;
+        }
+
+        .info:hover + .menuInfo2 {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .menuInfo2 {
+            display: none;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .menuPart{
+            width: 100%;
+            height: 600px;
+            border: 4px solid yellow;
+            border-style: dotted;
+            padding: 30px;
+           
+        }
+
+        .menus{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 520px;
+            background-color: rgba(0, 0, 0, 0.392);
+            padding: 20px 5%;
+        }
+
+        
+
+        .menuCont img{
+            width: 90%;
+            height: 330px;
+            padding: 20px;
+            border-radius: 15%;
+        }
+
+
+        .menus .menuCont{
+            width: 30%;
+            height: 460px;
+            background-color: rgba(0, 0, 0, 0.904);
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px black;
+            padding-top:20px;
+            
+        }
+
+        .menus .menuCont input[type=button]{
+           
+            border-radius: 10px;
+            height: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            font-weight: 600;
+            border: 0;
+            background-color: yellow;
+            color: black;
+            transition: .4s;
+        }
+
+        .menus .menuCont input[type=button]:hover{
+            background-color: rgba(105, 93, 93, 0.601);
+            color: yellow;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.189);
+            
+        }
+
+        .reg {
+            font-size: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .menuReg {
+            width: 20%;
+            background-color: grey;
+            color: yellow;
+            text-align: center;                                                                   
+        }
+
+        .menuInfoBase3 {
+            position: absolute;
+            top: 2030px;
+            background-color: #161618be;
+            left: 572px;
+            width: 10.5%;
+            border-radius: 10px;
+        }
+
+        .info:hover + .menuInfo3 {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .menuInfo3 {
+            display: none;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .menuInfoBase4 {
+            position: absolute;
+            top: 2030px;
+            background-color: #161618be;
+            left: 789px;
+            width: 10.5%;
+            border-radius: 10px;
+        }
+
+        .info:hover + .menuInfo4 {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .menuInfo4 {
+            display: none;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .menuInfoBase5 {
+            position: absolute;
+            top: 2030px;
+            background-color: #161618be;
+            left: 1006px;
+            width: 10.5%;
+            border-radius: 10px;
+        }
+
+        .info:hover + .menuInfo5 {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .menuInfo5 {
+            display: none;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .menuInfoBase6 {
+            position: absolute;
+            top: 2030px;
+            background-color: #161618be;
+            left: 1225px;
+            width: 10.5%;
+            border-radius: 10px;
+        }
+
+        .info:hover + .menuInfo6 {
+            display: block;
+            color: yellow;
+            font-family:'Times New Roman', Times, serif;
+            
+        }
+
+        .menuInfo6 {
+            display: none;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        #adult {
+            position: absolute;
+            top: 1500px;
+            color: yellow;
+        }
+
+        .text {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #category {
+
+            background-color: yellow;
+            border-radius: 10px;
+            width: 10%;
+            height: 30px;
+            position: absolute;
+            top: 1700px;
+            left: 800px;
+            
+        }
+
+        #categoryTitle {
+            position: absolute;
+            top: 1700px;
+            left: 600px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #h3 {
+            font-size: 40px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr1 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr2 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr3 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr4 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #movieList {
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #seatsList {
+            text-align: left;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr5 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+
+        #foodList {
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr6 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr7 {
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr8 {
+            text-align: left;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #tr9 {
+            font-size : 30px;
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #total {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #totalPrice {
+            font-size: 30px;
+            
+        }
+
+        #dispName {
+            font-size : 30px;
+            text-align: left;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #submitOrder {
+            background-color: yellow;
+            border-radius: 10px;
+            width: 10%;
+            height: 30px;
+            position: absolute;
+            top: 2420px;
+            left: 690px;
+        }
+
+        #submitOrder:hover {
+            background-color: rgba(105, 93, 93, 0.601);
+            color: yellow;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.189);
+            transition: .4s;
+        }
+
+        #menuBigTitle {
+            text-align: center;
+
+        }
+
+        .payment {
+            background-color: rgba(0, 0, 0, 0.678);
+            width: 100%;
+            height: 300px;
+            border: 4px solid yellow;
+            border-style: dotted;
+        }
+
+        #selectPaymentCard {
+            position: absolute;
+            top: 3180px;
+            left: 650px;
+        }
+
+        #selectPaymentCash {
+            position: absolute;
+            top: 3180px;
+            left: 1100px;
+        }
+
+        #visa {
+            position: absolute;
+            top: 3150px;
+            left: 750px;
+        }
+
+        #cash {
+            position: absolute;
+            top: 3150px;
+            left: 1150px;
+        }
+
+        #selectPayment {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .selectPaymentE-Wallet {
+            position: absolute;
+            top: 3180px;
+            left: 280px;
+        }
+
+        #tng {
+            position: absolute;
+            top: 3180px;
+            left: 300px;
+            width:8%;
+        }
+
+        #maybank {
+            position: absolute;
+            top: 3180px;
+            left: 430px;
+            width:8%;
+        } 
+
+        #boost {
+            position: absolute;
+            top: 3260px;
+            left: 340px;
+            width:5%;
+        }
+
+        #grab {
+            position: absolute;
+            top: 3260px;
+            left: 430px;
+            width:5%;
+        }
+
+        #mydebit {
+            position: absolute;
+            top: 3130px;
+            left: 700px;
+        }
+
+        #mastercard {
+            position: absolute;
+            top: 3160px;
+            left: 860px;
+        }
+
+        #method1 {
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: absolute;
+            left: 300px;
+        }
+
+        #method2 {
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: absolute;
+            left: 650px;
+        }
+
+        #method3 {
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: absolute;
+            left: 1100px;
+        }
+
+        
+
+        
+        
+
+
+
+
+
+        
+
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="images/gscLogo.png" class="gscLogo">
+    </div>
+
+    <h1 id="name">
+        
+    </h1>
+    <script>
+        let name=sessionStorage.getItem('name');
+        document.getElementById('name').innerHTML = "<span id='welcome'>Welcome</span> " + name;
+    </script>
+
+    <div class="showing">
+        <div class="movPart">
+            <p class="titleCont">-1- Select your movie</p>
+            <div align="center" class="movies">
+                <div class="movCont" id="movCont">
+                    <p class="movTitle">Imaginur</p>
+                    <img src="images/mov1.png">
+                    <div class="infoBase1">
+                        <div class="info">Info | Genre:Drama</div>
+                        <div class="mov1Info"><br>When a young man`s life spins out of control, he turns to hypnosis to try to get it back on track. However, things get even more out of control when the girl from his hypnotic dreams appears to him in real life. Desperate to know who this mystery woman is, he tries to introduce himself to her.</div>
+                    </div>
+                    
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov1Time1" value="10:00"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov1Time2" value="10:45"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov1Time3" value="12:00"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov1Time4" value="14:45"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov1Time5" value="16:30"></a></p>
+
+                </div>
+                <div class="movCont">
+                    <p class="movTitle">Ant-Man and the Wasp: Quantumania</p>
+                    <img src="images/mov2.jpg" alt="">
+                    <div class="infoBase2">
+                        <div class="info">Info | Genre:Action</div>
+                        <div class="mov2Info"><br>Super-Hero partners Scott Lang and Hope Van Dyne continue their adventures as Ant-Man and the Wasp. Together, with Hope`s parents Hank Pym and Janet Van Dyne, the family finds themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought was possible.</div>
+                    </div>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov2Time1" value="18:15"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov2Time2" value="20:10"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov2Time3" value="23:35"></a></p>                
+                </div>
+                <div class="movCont">
+                    <p class="movTitle">Waktu Maghrib</p>
+                    <img src="images/mov3.jpg" alt="">
+                    <div class="infoBase3">
+                        <div class="info">Info | Genre:Horror</div>
+                        <div class="mov3Info"><br>The cruel terror chased the souls of Adi and Saman until Ayu knows the reason for the terror. There is a sin that is committed at the most dangerous time, Maghrib Time. What sin did they commit? What happened to Adi, Saman, Ayu and the villagers?</div>
+                    </div>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov3Time1" value="16:10"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov3Time2" value="00:00"></a></p>
+                </div>
+            </div>
+        </div> 
+        <div class="movPart">
+            <h1 id="date">
+
+            </h1>
+            <div align="center" class="movies">
+                <div class="movCont">
+                    <p class="movTitle">Cocaine Bear</p>
+                    <img src="images/mov4.jpg">
+                    <div class="infoBase4">
+                        <div class="info">Info | Genre:Thriller</div>
+                        <div class="mov4Info"><br>A drug runner`s plane crashes with a load of cocaine that`s found by a black bear - who eats it.</div>
+                    </div>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov4Time1" value="13:10"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov4Time2" value="17:20"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov4Time3" value="19:00"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov4Time4" value="21:30"></a></p>
+                    
+
+                </div>
+                <div class="movCont">
+                    <p class="movTitle">Megan</p>
+                    <img src="images/mov5.jpg" alt="">
+                    <div class="infoBase5">
+                        <div class="info">Info | Genre:Thriller</div>
+                        <div class="mov5Info"><br>A robotics engineer at a toy company builds a life-like doll that begins to take on a life of its own.</div>
+                    </div>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov5Time1" value="20:00"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov5Time2" value="21:00"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov5Time3" value="00:30"></a></p>                
+                </div>
+                <div class="movCont">
+                    <p class="movTitle">Coast Guard Malaysia:Ops Helang</p>
+                    <img src="images/mov6.jpg" alt="">
+                    <div class="infoBase6">
+                        <div class="info">Info | Genre:Action</div>
+                        <div class="mov6Info"><br>Hafiz, a Malaysian Coast Guard officer, is celebrating his engagement at a beach resort with his fiancee. Out of nowhere, a group of terrorists hijack the hotel and kidnap his fiancee and her family. Several guests are taken as hostages, while the others are brutally killed. Hafiz manages to escape with only a few injuries, and he quickly sets up a search-and-rescue mission to get everyone back safely.</div>
+                    </div>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov6Time1" value="12:15"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov6Time2" value="15:00"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov6Time3" value="22:15"></a></p>
+                    <p><a href="#seatContainer"><input type="button" onclick="choice(this.value)" id="mov6Time4" value="23:30"></a></p>
+                </div>
+            </div>
+            
+            
+        </div> 
+        <div class="seatContainer" id="seatContainer">
+            <a href="#movCont"><button class="backbtn">Back To Choose Movie</button></a>
+            <p class="titleCont">-2- Select your seat</p>
+            <div class="screen"></div>
+            <div class="cinema-seats left">
+                
+                <div class="row">
+                  <input type="button" class="seat" onclick='dispSeat("A1")' id="A1">
+                  <input type="button" class="seat" onclick='dispSeat("A2")' id="A2">
+                  <input type="button" class="seat" onclick='dispSeat("A3")' id="A3">
+                  <input type="button" class="seat" onclick='dispSeat("A4")' id="A4">
+                  <input type="button" class="seat" onclick='dispSeat("A5")' id="A5">
+                  <input type="button" class="seat" onclick='dispSeat("A6")' id="A6">
+                  <input type="button" class="seat" onclick='dispSeat("A7")' id="A7">
+                </div>
+            
+                <div class="row">
+                  <input type="button" class="seat" onclick='dispSeat("B1")' id="B1">
+                  <input type="button" class="seat" onclick='dispSeat("B2")' id="B2">
+                  <input type="button" class="seat" onclick='dispSeat("B3")' id="B3">
+                  <input type="button" class="seat" onclick='dispSeat("B4")' id="B4">
+                  <input type="button" class="seat" onclick='dispSeat("B5")' id="B5">
+                  <input type="button" class="seat" onclick='dispSeat("B6")' id="B6">
+                  <input type="button" class="seat" onclick='dispSeat("B7")' id="B7">
+                </div>
+            
+                <div class="row">
+                  <input type="button" class="seat" onclick='dispSeat("C1")' id="C1">
+                  <input type="button" class="seat" onclick='dispSeat("C2")' id="C2">
+                  <input type="button" class="seat occupied" onclick='dispSeat("C3")'id="C3">
+                  <input type="button" class="seat" onclick='dispSeat("C4")'id="C4">
+                  <input type="button" class="seat occupied" onclick='dispSeat("C5")'id="C5">
+                  <input type="button" class="seat" onclick='dispSeat("C6")'id="C6">
+                  <input type="button" class="seat" onclick='dispSeat("C7")' id="C7">
+                </div>
+            
+                <div class="row">
+                  <input type="button" class="seat" onclick='dispSeat("D1")' id="D1">
+                  <input type="button" class="seat" onclick='dispSeat("D2")' id="D2">
+                  <input type="button" class="seat" onclick='dispSeat("D3")' id="D3">
+                  <input type="button" class="seat occupied" onclick='dispSeat("D4")' id="D4">
+                  <input type="button" class="seat occupied" onclick='dispSeat("D5")' id="D5">
+                  <input type="button" class="seat" onclick='dispSeat("D6")' id="D6">
+                  <input type="button" class="seat" onclick='dispSeat("D7")' id="D7">
+                </div>
+            
+                <div class="row">
+                  <input type="button" class="seat" onclick='dispSeat("E1")' id="E1">
+                  <input type="button" class="seat" onclick='dispSeat("E2")' id="E2">
+                  <input type="button" class="seat" onclick='dispSeat("E3")' id="E3">
+                  <input type="button" class="seat" onclick='dispSeat("E4")' id="E4">
+                  <input type="button" class="seat" onclick='dispSeat("E5")' id="E5">
+                  <input type="button" class="seat" onclick='dispSeat("E6")' id="E6">
+                  <input type="button" class="seat" onclick='dispSeat("E7")' id="E7">
+                </div>
+            </div>
+
+            <ul class="showcase">
+                <li>
+                  <div class="seat"></div>
+                  <small>N/A</small>
+                </li>
+                <li>
+                  <div class="seat selected"></div>
+                  <small>Selected</small>
+                </li>
+                <li>
+                  <div class="seat occupied"></div>
+                  <small>Occupied</small>
+                </li>    
+            </ul>
+            <p class="text">
+                You have selected <span id="count">0</span> seats. Seat <span id="display" onclick="dispSeat()"></span><br>
+                
+            </p>
+            <label id="categoryTitle" for="category">Choose your category:</label>
+            <select name="category" id="category">
+                <option id="adult" value="20">Adult</option>
+                <option id="student" value="12">Student</option>
+                <option  id="oku" value="12">OKU</option>
+            </select>
+
+            <button class="submitSeat" onclick="submitSeat(dispSeat())">Confirm Seat</button>
+            <a href="#menuCont"><button class="nextBtn">Next To Order Food and Beverages</button></a>
+        </div>
+
+        <div class="menuPart">
+            <p class="titleCont">-3- Select your food and beverages</p>
+            
+            <div align="center" class="menus">
+                <div class="menuCont" id="menuCont">
+                    <p class="menuTitle">New e-Combo</p>
+                    <img src="images/combo1.jpeg">
+                    <div class="menuInfoBase1">
+                        <div class="info">Info</div>
+                        <div class="menuInfo1"><br><b>REGULAR($14.5):</b><br>1x Caramel Popcorn REGULAR + 1x Soft Drink REGULAR<br><br><b>LARGE($18.5):</b><br>1x Caramel Popcorn LARGE + 1x Soft Drink LARGE</div>
+                    </div>
+                    
+                    <p class="reg">Regular</p>
+                    <p><input type="number" class="menuReg" id="menu1R" placeholder=""></p>
+                    <p class="reg">Large</p>
+                    <p><input type="number" class="menuReg" id="menu1L" placeholder=""></p>
+                </div>
+                <div class="menuCont">
+                    <p class="menuTitle">New e-Combo 2</p>
+                    <img src="images/combo2.jpeg" alt="">
+                    <div class="menuInfoBase2">
+                        <div class="info">Info</div>
+                        <div class="menuInfo2"><br><b>REGULAR($14.5):</b><br>1x Caramel Popcorn REGULAR + 1x Mineral Water Spritzer<br><br><b>LARGE($18.5):</b><br>1x Caramel Popcorn LARGE + 1x Mineral Water Spritzer</div>
+                    </div>
+                    <p class="reg">Regular</p>
+                    <p><input type="number" class="menuReg" id="menu2R" placeholder=""></p>
+                    <p class="reg">Large</p>
+                    <p><input type="number" class="menuReg" id="menu2L" placeholder=""></p>
+                </div>
+                <div class="menuCont">
+                    <p class="menuTitle">Family e-Combo A (4pax)</p>
+                    <img src="images/combo3.jpeg">
+                    <div class="menuInfoBase3">
+                        <div class="info">Info</div>
+                        <div class="menuInfo3"><br><b>Set A($32):</b><br>2x Caramel Popcorn LARGE + 2x Soft Drink LARGE + 2x Mineral Water Spritzer + 2x nugget LARGE</div>
+                    </div>
+                    <p class="reg">Set A</p>
+                    <p><input type="number" class="menuReg" id="menuAF" placeholder=""></p>
+                    
+                </div>
+                <div class="menuCont">
+                    <p class="menuTitle">Family e-Combo B (4 pax)</p>
+                    <img src="images/combo4.jpeg" alt="">
+                    <div class="menuInfoBase4">
+                        <div class="info">Info</div>
+                        <div class="menuInfo4"><br><b>Set B($32):</b><br>2x Caramel Popcorn LARGE + 2x Soft Drink LARGE + 2x Mineral Water Spritzer + 1x nugget LARGE + 1x Mini Sausage with Cheesy Sauce</div>
+                    </div>
+                    <p class="reg">Set B</p>
+                    <p><input type="number" class="menuReg" id="menuBF" placeholder=""></p>
+                </div>
+                <div class="menuCont">
+                    <p class="menuTitle">Mini Sausages e-Combo 1</p>
+                    <img src="images/combo5.jpeg" alt="">
+                    <div class="menuInfoBase5">
+                        <div class="info">Info</div>
+                        <div class="menuInfo5"><br><b>Cheesy Sauce($14.5):</b><br>1x Mini Sausages + 1x Soft Drink Regular + 1x Cheesy Sauce<br><br><b>Curry Mayo($14.5):</b><br>1x Mini Sausages + 1x Soft Drink Regular + 1x Curry Mayo</div>
+                    </div>
+                    <p class="reg">Cheesy Sauce</p>
+                    <p><input type="number" class="menuReg" id="menu3R" placeholder=""></p>
+                    <p class="reg">Curry Mayo</p>
+                    <p><input type="number" class="menuReg" id="menu3L" placeholder=""></p>
+                </div>
+                <div class="menuCont">
+                    <p class="menuTitle">Mini Sausage e-Combo 2</p>
+                    <img src="images/combo6.jpeg" alt="">
+                    <div class="menuInfoBase6">
+                        <div class="info">Info</div>
+                        <div class="menuInfo6"><br><b>Cheesy Sauce($14.5):</b><br>1x Mini Sausages + 1x Mineral Water Spritzer + 1x Cheesy Sauce<br><br><b>Curry Mayo($14.5):</b><br>1x Mini Sausages + 1x Mineral Water Spritzer + 1x Curry Mayo</div>
+                    </div>
+                    <p class="reg">Cheesy Sauce</p>
+                    <p><input type="number" class="menuReg" id="menu4R" placeholder=""></p>
+                    <p class="reg">Curry Mayo</p>
+                    <p><input type="number" class="menuReg" id="menu4L" placeholder=""></p>
+                </div>
+            </div>
+
+            
+            <a href="#list"><input type="button" id="submitOrder" onclick="calculateFood()" value="Confirm Order"></a>
+        </div>
+
+        
+        <div class="list" id="list">
+            <h3 id="h3">Cinema Ticket</h3>
+            <table class="tableList">
+                <tr id="tr1">
+                    <th>Movie</th>
+                    <th>Time</th>
+                    <th>Price</th>
+                </tr>
+
+                <tr id="tr2">
+                    <td><p id="movieList"></p></td>
+                    <td><p id="timeList"></p></td>
+                    <td><p id="movPriceList"></p></td>
+                </tr>
+
+                <tr id="tr3">
+                    <th><p>Seat</p></th>
+                    <th><p>Hall</p></th>
+                    <th><p></p></th>
+                </tr>
+
+                <tr id="tr4">
+                    <td><p id="seatsList"></p></td>
+                    <td><p id="hallList"></p></td>
+                    <td><p id="seatPriceList"></p></td>
+                </tr>
+
+                <tr id="tr5">
+                    <th><p>Food and Beverages</p></th>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                </tr>
+
+                <tr id="tr6">
+                    <td width="60%"><p id="foodList"></p></td>
+                    <td width="20%"><p id="quantityList"></p></td>
+                    <td width="20%"><p id="foodPriceList"></p></td>
+                </tr>
+
+                <tr id="tr7">
+                    <th><p>Name</p></th>
+                </tr>
+
+                <tr id="tr8">
+                    <td><p id="dispName"></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                </tr>
+
+                <tr id="tr9">
+                    <th id="total"><p>Total</p></th>
+                    <td><p></p></td>
+                    <th><p id="totalPrice"></p></th>
+                </tr>
+            </table>
+            
+        </div>
+
+        <div class="payment">
+            <p id="selectPayment">-4- Select your payment</p>
+            <input type="radio" name="radioPayment" id="selectPaymentE-Wallet" class="selectPaymentE-Wallet" onclick="radioFunc()">&nbsp;<img id="tng" src="images/tng.png" style="width:10%" alt=""><img src="images/boost.png" id="boost" alt=""><img id="maybank" src="images/maybankqr.png" alt=""><img id="grab" src="images/grab.png" alt="">
+            <input type="radio" name="radioPayment" id="selectPaymentCard" onclick="radioFunc()">&nbsp;<img src="images/mydebit.png" id="mydebit" style="width: 10%;" alt=""><img src="images/mastercard.png" id="mastercard"  alt="" style="width:10%">
+            <input type="radio" name="radioPayment" id="selectPaymentCash" onclick="radioFunc()">&nbsp;<img id="cash" src="images/cash.png" style="width:10%" alt="">
+            
+            <p id="method1">Pay by e-Wallet</p>
+            <p id="method2">Pay by Card</p>
+            <p id="method3">Pay by Cash</p>
+            
+        </div>
+    </div>
+
+    <script>
+        function choice(time){
+            if(time == "10:00"){
+                var a = document.getElementById("mov1Time1").value;
+                document.getElementById("timeList").innerHTML = a;
+                document.getElementById("movieList").innerHTML = "Imaginur";
+                
+            } else if (time == "10:45"){
+                var b = document.getElementById("mov1Time2").value;
+                document.getElementById("timeList").innerHTML = b;
+                document.getElementById("movieList").innerHTML = "Imaginur";
+            } else if (time == "12:00"){
+                var c = document.getElementById("mov1Time3").value;
+                document.getElementById("timeList").innerHTML = c;
+                document.getElementById("movieList").innerHTML = "Imaginur";
+            } else if (time == "14:45"){
+                var d = document.getElementById("mov1Time4").value;
+                document.getElementById("timeList").innerHTML = d;
+                document.getElementById("movieList").innerHTML = "Imaginur";
+            } else if (time == "16:30"){
+                var e = document.getElementById("mov1Time5").value;
+                document.getElementById("timeList").innerHTML = e;
+                document.getElementById("movieList").innerHTML = "Imaginur";
+            } else if (time == "18:15"){
+                var f = document.getElementById("mov2Time1").value;
+                document.getElementById("timeList").innerHTML = f;
+                document.getElementById("movieList").innerHTML = "Ant-Man and the Wasp:<br> Quantumania";
+            } else if (time == "20:10"){
+                var g = document.getElementById("mov2Time2").value;
+                document.getElementById("timeList").innerHTML = g;
+                document.getElementById("movieList").innerHTML = "Ant-Man and the Wasp:<br> Quantumania";
+            } else if (time == "23:35"){
+                var h = document.getElementById("mov2Time3").value;
+                document.getElementById("timeList").innerHTML = h;
+                document.getElementById("movieList").innerHTML = "Ant-Man and the Wasp:<br> Quantumania";
+            } else if (time == "16:10"){
+                var i = document.getElementById("mov3Time1").value;
+                document.getElementById("timeList").innerHTML = i;
+                document.getElementById("movieList").innerHTML = "Waktu Maghrib";
+            } else if (time == "00:00"){
+                var j = document.getElementById("mov3Time2").value;
+                document.getElementById("timeList").innerHTML = j;
+                document.getElementById("movieList").innerHTML = "Waktu Maghrib";
+            } else if (time == "13:10"){
+                var k = document.getElementById("mov4Time1").value;
+                document.getElementById("timeList").innerHTML = k;
+                document.getElementById("movieList").innerHTML = "Cocaine Bear";
+            } else if (time == "17:20"){
+                var l = document.getElementById("mov4Time2").value;
+                document.getElementById("timeList").innerHTML = l;
+                document.getElementById("movieList").innerHTML = "Cocaine Bear";
+            } else if (time == "19:00"){
+                var m = document.getElementById("mov4Time3").value;
+                document.getElementById("timeList").innerHTML = m;
+                document.getElementById("movieList").innerHTML = "Cocaine Bear";
+            } else if (time == "21:30"){
+                var n = document.getElementById("mov4Time4").value;
+                document.getElementById("timeList").innerHTML = n;
+                document.getElementById("movieList").innerHTML = "Cocaine Bear";
+            } else if (time == "20:00"){
+                var o = document.getElementById("mov5Time1").value;
+                document.getElementById("timeList").innerHTML = o;
+                document.getElementById("movieList").innerHTML = "Megan";
+            } else if (time == "21:00"){
+                var p = document.getElementById("mov5Time2").value;
+                document.getElementById("timeList").innerHTML = p;
+                document.getElementById("movieList").innerHTML = "Megan";
+            } else if (time == "00:30"){
+                var q = document.getElementById("mov5Time3").value;
+                document.getElementById("timeList").innerHTML = q;
+                document.getElementById("movieList").innerHTML = "Megan";
+            } else if (time == "12:15"){
+                var r = document.getElementById("mov6Time1").value;
+                document.getElementById("timeList").innerHTML = r;
+                document.getElementById("movieList").innerHTML = "Coast Guard Malaysia: Ops Helang";
+            } else if (time == "15:00"){
+                var s = document.getElementById("mov6Time2").value;
+                document.getElementById("timeList").innerHTML = s;
+                document.getElementById("movieList").innerHTML = "Coast Guard Malaysia: Ops Helang";
+            } else if (time == "22:15"){
+                var t = document.getElementById("mov6Time3").value;
+                document.getElementById("timeList").innerHTML = t;
+                document.getElementById("movieList").innerHTML = "Coast Guard Malaysia: Ops Helang";
+            } else if (time == "23:30"){
+                var u = document.getElementById("mov6Time4").value;
+                document.getElementById("timeList").innerHTML = u;
+                document.getElementById("movieList").innerHTML = "Coast Guard Malaysia: Ops Helang";
+                
+            }
+        }
+
+    
+    </script>
+    <script>
+        const container = document.querySelector('.seatContainer');
+        const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+
+        container.addEventListener('click', e => {
+        if (e.target.classList.contains('seat') &&
+            !e.target.classList.contains('occupied')) {
+            e.target.classList.toggle('selected');
+            
+        }
+        updateSelectedCount();
+        });
+
+        function updateSelectedCount() {
+            const selectedSeats = document.querySelectorAll('.row .seat.selected');
+            count.innerText = selectedSeats.length;
+            
+        }
+
+    </script>
+
+    <script>
+       var seatName = [];
+       function dispSeat(item){
+            seatName.push(item);
+            document.getElementById("display").innerHTML = seatName;
+       }
+
+       
+
+       function submitSeat(){
+            document.getElementById("seatsList").innerHTML = "Seat " + seatName ;
+
+       }
+    </script>
+
+    <script>
+        function calculateFood(){
+            const selectedSeats = document.querySelectorAll('.row .seat.selected');
+            const a = selectedSeats.length;
+            var priceMovSeat;
+
+            let select = document.querySelector('#category');
+            
+            if(select.value == "20"){
+                priceMovSeat = select.value * a;
+            } else if (select.value == "12"){
+                priceMovSeat = select.value * a;
+            }
+        
+            document.getElementById("seatPriceList").innerHTML = priceMovSeat;
+
+            var menu1R = document.getElementById("menu1R").value;
+            var menu1L = document.getElementById("menu1L").value;
+            var menu2R = document.getElementById("menu2R").value;
+            var menu2L = document.getElementById("menu2L").value;
+            var menuAF = document.getElementById("menuAF").value;
+            var menuBF = document.getElementById("menuBF").value;
+            var menu3R = document.getElementById("menu3R").value;
+            var menu3L = document.getElementById("menu3L").value;
+            var menu4R = document.getElementById("menu4R").value;
+            var menu4L = document.getElementById("menu4L").value;
+
+            const regular = 14.5;
+            const large = 18.5;
+            const family = 32;
+
+
+            var totalPriceFood = (menu1R *regular) + (menu1L*large) + (menu2R*regular) + (menu2L*large) + (menuAF*family) + (menuBF*family) + (menu3R*regular) + (menu3L*large) + (menu4R*regular) + (menu4L*large);
+            var foodArr = [];
+
+            document.getElementById("foodPriceList").innerHTML = totalPriceFood;
+
+            if(menu1R !== ""){
+                var k = "New e-Combo (Regular) " + menu1R + "x";
+                foodArr.push(k);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu1L !== ""){
+                var b ="New e-Combo (Large) " + menu1L + "x";
+                foodArr.push(b);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu2R !== ""){
+                var c ="New e-Combo 2 (Regular) " + menu2R + "x";
+                foodArr.push(c);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu2L !== ""){
+                var d ="New e-Combo 2 (Large) " + menu2L + "x";
+                foodArr.push(d);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menuAF !== ""){
+                var e ="Family e-Combo A (4 pax) " + menuAF + "x";
+                foodArr.push(e);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menuBF !== ""){
+                var f ="Family e-Combo B (4 pax) " + menuBF + "x";
+                foodArr.push(f);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu3R !== ""){
+                var g ="Mini Sausages e-Combo 1 (Cheesy Sauce) " + menu3R + "x";
+                foodArr.push(g);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu3L !== ""){
+                var h ="Mini Sausages e-Combo 1 (Curry Mayo) " + menu3L + "x";
+                foodArr.push(h);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu4R !== ""){
+                var i ="Mini Sausages e-Combo 2 (Curry Mayo) " + menu4R + "x";
+                foodArr.push(i);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+
+            if(menu4L !== ""){
+                var j ="Mini Sausages e-Combo 2 (Curry Mayo) " + menu4L + "x";
+                foodArr.push(j);
+                document.getElementById("foodList").innerHTML = foodArr;
+            }
+        
+    
+            var totalMovSeat = document.getElementById("movPriceList").value;
+            var totalFood = document.getElementById("foodPriceList").value;
+            var total = totalMovSeat + totalFood;
+            document.getElementById("totalPrice").innerHTML = total;
+
+            document.getElementById("totalPrice").innerHTML = priceMovSeat + totalPriceFood;
+            document.getElementById("hallList").innerHTML = Math.floor(Math.random()*6) + 1;
+
+            let name=sessionStorage.getItem('name');
+            document.getElementById('dispName').innerHTML = name;
+            
+        }
+    </script>
+
+    <script>
+        function radioFunc(){
+            var a = document.getElementById("selectPaymentE-Wallet");
+            var b = document.getElementById("selectPaymentCard");
+            var c = document.getElementById("selectPaymentCash");
+
+            if(a.checked == true){
+                alert("Scan e-Wallet barcode");
+            } else if(b.checked == true){
+                alert("Tap or insert card");
+            } else {
+                alert("Insert cash");
+            }
+            
+            
+        }
+    </script>
+    
+
+</body>
+</html>
